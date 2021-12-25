@@ -11,7 +11,7 @@ function ItemRow({ index, name, fullQuantity, currentQuantity, setItem }) {
         setItem(name, permitedValue);
     }
     return (
-        <tr>
+        <tr className='item-row'>
             <td>{index}</td>
             <td>{name}</td>
             <td>{fullQuantity}</td>

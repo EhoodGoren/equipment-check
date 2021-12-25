@@ -1,0 +1,16 @@
+#equipment {
+    border-collapse: collapse;
+    width: 60vw;
+    height: 50vh;
+}
+#equipment * {
+    padding: 1%;
+    white-space: nowrap;
+    border: 1px solid black;
+}
+#equipment .item-row:nth-child(even) td {
+    background-color: #E6EEEE;
+}
+#equipment .item-row:nth-child(odd) td {
+    background-color: white;
+}

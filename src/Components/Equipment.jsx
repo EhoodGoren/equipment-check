@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from 'react-redux';
 import ItemRow from './ItemRow';
+import './Equipment.css';
 
 function Equipment({ equipment }) {
     return(
-        <table>
+        <table id='equipment'>
             <tbody>
                 <tr>
                     <th>#</th>

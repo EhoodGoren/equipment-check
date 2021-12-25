@@ -30,7 +30,7 @@ function AddItemForm({ equipment, addItem }) {
                 <label htmlFor='current'>Current quantity</label><br />
                 <input name='current' ref={currentQuantityInput} type='number' placeholder={0} />
             </div>
-            <button id='submit-item' type='submit' onClick={submitItem}>Submit</button>
+            <button id='submit-item' type='submit' onClick={submitItem}>Add item</button>
         </div>
     )
 }

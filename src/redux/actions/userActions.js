@@ -1,6 +1,6 @@
-export const setUser = (name, workplace, time) => ({
+export const setUser = (name, workplace, date) => ({
     type: 'SET_USER',
     name,
     workplace,
-    time
+    date
 });

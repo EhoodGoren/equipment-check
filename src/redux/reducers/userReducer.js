@@ -5,11 +5,9 @@ export default function userReducer(state = initialState, action) {
         case 'SET_USER':
             const { name, workplace, date } = action;
             return {
-                user: {
-                    name,
-                    workplace,
-                    date
-                }
+                name,
+                workplace,
+                date
             }
         default:
             return state;

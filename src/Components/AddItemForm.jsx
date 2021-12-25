@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { connect } from 'react-redux';
 import { addItem } from '../redux/actions/equipmentActions';
+import './AddItemForm.css';
 
 function AddItemForm({ equipment, addItem }) {
     const nameInput = useRef();
@@ -15,15 +16,21 @@ function AddItemForm({ equipment, addItem }) {
         addItem(nameInput.current.value, fullQuantityInput.current.value, currentQuantityInput.current.value);
     }
     return(
-        <div>
-            <h2>Add Item</h2>
-            <label htmlFor='name' >Item name</label><br />
-            <input name='name' ref={nameInput} placeholder="Enter item name" />
-            <label htmlFor='full'>Full quantity</label><br />
-            <input name='full' ref={fullQuantityInput} placeholder="Enter full quantity" />
-            <label htmlFor='current'>Current quantity</label><br />
-            <input name='current' ref={currentQuantityInput} type='number' placeholder={0} />
-            <button type='submit' onClick={submitItem}>Submit</button>
+        <div id='add-item-form'>
+            <h2 id='add-item-title'>Add Item</h2>
+            <div id='item-name'>
+                <label htmlFor='name' >Item name</label><br />
+                <input name='name' ref={nameInput} placeholder="Enter item name" />
+            </div>
+            <div id='full-quantity'>
+                <label htmlFor='full'>Full quantity</label><br />
+                <input name='full' ref={fullQuantityInput} placeholder="Enter full quantity" />
+            </div>
+            <div id='current-quantity'>
+                <label htmlFor='current'>Current quantity</label><br />
+                <input name='current' ref={currentQuantityInput} type='number' placeholder={0} />
+            </div>
+            <button id='submit-item' type='submit' onClick={submitItem}>Submit</button>
         </div>
     )
 }

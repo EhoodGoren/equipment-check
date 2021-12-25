@@ -5,7 +5,7 @@ import AddItemForm from "./AddItemForm";
 function ManageEquipment() {
     return(
         <div>
-            <Equipment />
+            <Equipment /><br />
             <AddItemForm />
         </div>
     )

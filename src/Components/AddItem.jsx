@@ -1,6 +1,6 @@
 import React from "react";
 
-function Equipment() {
+function AddItem() {
     return(
         <div>
             
@@ -8,4 +8,4 @@ function Equipment() {
     )
 }
 
-export default Equipment;
+export default AddItem;

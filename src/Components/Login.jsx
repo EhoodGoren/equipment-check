@@ -16,11 +16,11 @@ function Login({ setUser }) {
     return(
         <div id='login'>
             <h2>Worker details</h2>
-            <label for='name' >Full name</label><br />
+            <label htmlFor='name' >Full name</label><br />
             <input name='name' placeholder="Enter name" ref={nameInput} />
-            <label for='workplace'>Workplace</label><br />
+            <label htmlFor='workplace'>Workplace</label><br />
             <input name='workplace' placeholder="Enter work place" ref={workplaceInput} />
-            <label for='date'>Date</label><br />
+            <label htmlFor='date'>Date</label><br />
             <input name='date' type='date' ref={dateInput} />
             <button onClick={submitUser}>Submit</button>
         </div>

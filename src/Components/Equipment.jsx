@@ -1,11 +1,36 @@
 import React from "react";
+import { connect } from 'react-redux';
+import ItemRow from './ItemRow';
 
-function Equipment() {
+function Equipment({ equipment }) {
     return(
-        <div>
-            
-        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <th>#</th>
+                    <th>Item name</th>
+                    <th>Full quantity</th>
+                    <th>Current quantity</th>
+                    <th>Missing</th>
+                </tr>
+                {equipment.map(({ name, fullQuantity, currentQuantity }, index) => (
+                    <ItemRow
+                        key={`equipment-${name}`}
+                        index={index}
+                        name={name}
+                        fullQuantity={fullQuantity}
+                        currentQuantity={currentQuantity}
+                    />
+                ))}
+            </tbody>
+        </table>
     )
 }
 
-export default Equipment;
+function mapStateToProps({ equipment }) {
+    return {
+        equipment
+    }
+}
+
+export default connect(mapStateToProps)(Equipment);

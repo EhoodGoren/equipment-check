@@ -17,3 +17,6 @@
 #equipment tr td:nth-child(1), th:nth-child(1) {
     width: 5%;
 }
+#equipment .current-quantity {
+    width: 40%;
+}

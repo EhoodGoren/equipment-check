@@ -1,12 +1,12 @@
 import React from "react";
 import Equipment from "./Equipment";
-import AddItem from "./AddItem";
+import AddItemForm from "./AddItemForm";
 
 function ManageEquipment() {
     return(
         <div>
             <Equipment />
-            <AddItem />
+            <AddItemForm />
         </div>
     )
 }

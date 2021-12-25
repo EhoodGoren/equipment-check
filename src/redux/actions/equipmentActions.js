@@ -3,3 +3,10 @@ export const setItem = (item, quantity) => ({
     item,
     quantity
 });
+
+export const addItem = (name, fullQuantity, currentQuantity= 0) => ({
+    type: 'ADD_ITEM',
+    name,
+    fullQuantity,
+    currentQuantity
+});

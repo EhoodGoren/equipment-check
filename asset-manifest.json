@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/equipment-check/static/css/main.f9b518c1.css",
+    "main.js": "/equipment-check/static/js/main.525ec80d.js",
+    "index.html": "/equipment-check/index.html",
+    "main.f9b518c1.css.map": "/equipment-check/static/css/main.f9b518c1.css.map",
+    "main.525ec80d.js.map": "/equipment-check/static/js/main.525ec80d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9b518c1.css",
+    "static/js/main.525ec80d.js"
+  ]
+}

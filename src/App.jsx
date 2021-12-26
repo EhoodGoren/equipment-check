@@ -6,7 +6,7 @@ import ManageEquipment from './Components/ManageEquipment';
 
 function App({ user }) {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path='/' element={<Login />} />
                 <Route path='/equipment' element={

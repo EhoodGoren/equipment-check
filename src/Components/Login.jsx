@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/actions/userActions";
+import Signature from "./Signature";
 import './Login.css';
 
 function Login({ name, workplace, date, setUser }) {
@@ -41,6 +42,9 @@ function Login({ name, workplace, date, setUser }) {
                 <input name='date' type='date' value={inputs.date} onChange={handleChange} />
             </div>
             <button id='login-submit' onClick={submitUser}>Submit</button>
+            <div id='signature'>
+                <Signature />
+            </div>
         </div>
     )
 }

@@ -7,6 +7,6 @@
     text-align: center;
 }
 
-#login-form div{
+#login-form div, button{
     margin-bottom: 5%;
 }

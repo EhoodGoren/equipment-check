@@ -10,3 +10,8 @@ export const addItem = (name, fullQuantity, currentQuantity= 0) => ({
     fullQuantity,
     currentQuantity
 });
+
+export const removeItem = (name) => ({
+    type: 'REMOVE_ITEM',
+    name
+});

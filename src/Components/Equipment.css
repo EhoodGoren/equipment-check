@@ -1,6 +1,6 @@
 #equipment {
     border-collapse: collapse;
-    width: 60vw;
+    width: 70vw;
     height: 50vh;
 }
 #equipment * {
@@ -15,6 +15,9 @@
     background-color: white;
 }
 #equipment tr td:nth-child(1), th:nth-child(1) {
+    width: 5%;
+}
+#equipment tr td:nth-child(6) {
     width: 5%;
 }
 #equipment .current-quantity {

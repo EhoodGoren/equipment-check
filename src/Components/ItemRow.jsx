@@ -1,14 +1,18 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { setItem } from '../redux/actions/equipmentActions';
+import { setItem, removeItem } from '../redux/actions/equipmentActions';
 
-function ItemRow({ index, name, fullQuantity, currentQuantity, setItem }) {
+function ItemRow({ index, name, fullQuantity, currentQuantity, original, setItem, deleteItem }) {
     const setQuantity = (e) => {
         const inputValue = e.target.value;
         let permitedValue = inputValue;
         if(inputValue > fullQuantity) permitedValue = fullQuantity;
         if(inputValue < 0) permitedValue = 0;
         setItem(name, permitedValue);
+    }
+    const userAddedItem = () => {
+        if(original) return <td></td>
+        return <td><button onClick={() => deleteItem(name)}>❌</button></td>
     }
     return (
         <tr className='item-row'>
@@ -25,13 +29,15 @@ function ItemRow({ index, name, fullQuantity, currentQuantity, setItem }) {
                     onChange={setQuantity}
                 /></td>
             <td>{fullQuantity - currentQuantity}</td>
+            {userAddedItem()}
         </tr>
     )
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        setItem: (item, quantity) => dispatch(setItem(item, quantity))
+        setItem: (name, quantity) => dispatch(setItem(name, quantity)),
+        deleteItem: (name) => dispatch(removeItem(name))
     }
 }
 

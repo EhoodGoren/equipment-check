@@ -24,7 +24,7 @@ function AddItemForm({ equipment, addItem }) {
             </div>
             <div id='full-quantity'>
                 <label htmlFor='full'>Full quantity</label><br />
-                <input name='full' ref={fullQuantityInput} placeholder="Enter full quantity" />
+                <input name='full' ref={fullQuantityInput} type='number' placeholder="Enter full quantity" />
             </div>
             <div id='current-quantity'>
                 <label htmlFor='current'>Current quantity</label><br />

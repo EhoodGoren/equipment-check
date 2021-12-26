@@ -3,7 +3,8 @@ import fullEquipmentList from '../../db';
 const data = [...fullEquipmentList];
 const initialState = data.map(item => ({
     ...item,
-    currentQuantity: 0
+    currentQuantity: 0,
+    original: true
 }));
 
 export default function equipmentReducer(state = initialState, action) {
@@ -18,7 +19,14 @@ export default function equipmentReducer(state = initialState, action) {
         case 'ADD_ITEM': {
             const { name, fullQuantity, currentQuantity } = action;
             const updatedList = [...state];
-            updatedList.push({name, fullQuantity, currentQuantity});
+            updatedList.push({name, fullQuantity, currentQuantity, original: false});
+            return updatedList;
+        }
+        case 'REMOVE_ITEM': {
+            console.log('???');
+            const { name } = action;
+            const updatedList = [...state].filter(item => item.name !== name);
+            console.log(updatedList);
             return updatedList;
         }
         default:

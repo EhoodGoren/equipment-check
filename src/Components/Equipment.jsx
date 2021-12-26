@@ -14,13 +14,14 @@ function Equipment({ equipment }) {
                     <th>Current quantity</th>
                     <th>Missing</th>
                 </tr>
-                {equipment.map(({ name, fullQuantity, currentQuantity }, index) => (
+                {equipment.map(({ name, fullQuantity, currentQuantity, original }, index) => (
                     <ItemRow
                         key={`equipment-${name}`}
                         index={index}
                         name={name}
                         fullQuantity={fullQuantity}
                         currentQuantity={currentQuantity}
+                        original={original}
                     />
                 ))}
             </tbody>

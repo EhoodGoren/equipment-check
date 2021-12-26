@@ -7,7 +7,7 @@ import AddItemForm from "./AddItemForm";
 function ManageEquipment({ name, workplace, date }) {
     const navigate = useNavigate();
     const goBack = () => {
-        navigate('/login');
+        navigate('/');
     }
     const formatDate = date.split('-').reverse().join('-');
     return(

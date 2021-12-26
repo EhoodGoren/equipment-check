@@ -23,10 +23,8 @@ export default function equipmentReducer(state = initialState, action) {
             return updatedList;
         }
         case 'REMOVE_ITEM': {
-            console.log('???');
             const { name } = action;
             const updatedList = [...state].filter(item => item.name !== name);
-            console.log(updatedList);
             return updatedList;
         }
         default:

@@ -1,17 +1,28 @@
-import React, { useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../redux/actions/userActions";
 import './Login.css';
 
-function Login({ setUser }) {
-    const nameInput = useRef();
-    const workplaceInput = useRef();
-    const dateInput = useRef();
+function Login({ name, workplace, date, setUser }) {
+    const initialInputs = {
+        name: name || '',
+        workplace: workplace || '',
+        date: date || ''
+    }
+    const [inputs, setInputs] = useState(initialInputs);
     const navigate = useNavigate();
 
+    const handleChange = (e) =>{
+        setInputs({
+            ...inputs,
+            [e.target.name]: e.target.value
+        })
+    }
+
     const submitUser = () => {
-        setUser(nameInput.current.value, workplaceInput.current.value, dateInput.current.value);
+        const {name, workplace, date} = inputs;
+        setUser(name, workplace, date);
         navigate('/equipment');
     }
     return(
@@ -19,19 +30,27 @@ function Login({ setUser }) {
             <h2 id='login-title'>Worker details</h2>
             <div id='login-name'>
                 <label htmlFor='name' >Full name</label><br />
-                <input name='name' placeholder="Enter name" ref={nameInput} />
+                <input name='name' placeholder="Enter name" value={inputs.name} onChange={handleChange} />
             </div>
             <div id='login-workplace'>
                 <label htmlFor='workplace'>Workplace</label><br />
-                <input name='workplace' placeholder="Enter work place" ref={workplaceInput} />
+                <input name='workplace' placeholder="Enter work place" value={inputs.workplace} onChange={handleChange} />
             </div>
             <div id='login-date'>
                 <label htmlFor='date'>Date</label><br />
-                <input name='date' type='date' ref={dateInput} />
+                <input name='date' type='date' value={inputs.date} onChange={handleChange} />
             </div>
             <button id='login-submit' onClick={submitUser}>Submit</button>
         </div>
     )
+}
+
+function mapStateToProps({ user: { name, workplace, date }}) {
+    return {
+        name,
+        workplace,
+        date
+    }
 }
 
 function mapDispatchToProps(dispatch) {
@@ -40,4 +59,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
